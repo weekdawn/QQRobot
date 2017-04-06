@@ -33,6 +33,8 @@ def onQQMessage(bot, contact, member, content):
 	if content == "-stop":
 		bot.SendTo(contact, "qq_robot has stoped")
 		bot.Stop()
+	elif '@ME' in content:
+		bot.SendTo(contact, get_response(content))
 	elif member:
 		pass
 	else:
